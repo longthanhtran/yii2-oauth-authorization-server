@@ -76,3 +76,31 @@ return [
 ```
 
 Be sure to prepare the private key, public key (in @app/keys folder) and encryption Key.
+
+* To prepare the schema, run migration with
+```shell
+yii migrate --migrationPath=@vendor/longthanhtran/yii2-oauth2-authorization-server/oauth2/migrations
+```
+
+* To validate user's credential, you can implement UserEntityInterface for your User class, sample provide below. Be sure to `use UserQueryTrait` in `User`
+
+```php
+namespace app\models;
+
+use League\OAuth2\Server\Entities\ClientEntityInterface;
+
+trait UserQueryTrait {
+
+    public function getUserEntityByUserCredentials($username,
+                                                   $password,
+                                                   $grantType,
+                                                   ClientEntityInterface $clientEntity)
+    {
+        $user = User::findOne(['username' => $username]);
+        if ($user && $user->validatePassword($password)) {
+            return $user;
+        }
+        return null;
+    }
+}
+```
