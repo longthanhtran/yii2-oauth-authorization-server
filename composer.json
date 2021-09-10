@@ -1,0 +1,34 @@
+{
+  "name": "longthanhtran/yii2-oauth2-server",
+  "description": "Yii2 OAuth2 authorization server",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii",
+    "extension",
+    "module",
+    "oauth2"
+  ],
+  "author": [
+    {
+      "name": "Long Tran",
+      "email": "long.thanh.tran@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "longthanhtran\\oauth2\\": "oauth2/"
+    }
+  },
+  "require": {
+      "php": ">=7.4 | 8.0",
+      "yiisoft/yii2": "~2.0.14",
+      "yiisoft/yii2-twig": "^2.4",
+      "league/oauth2-server": "^8.3",
+      "guzzlehttp/guzzle": "^7.3",
+      "lcobucci/jwt": "^4.1",
+      "ext-json": "*",
+      "nesbot/carbon": "^2.52",
+      "andreyv/yii2-ip-ratelimiter": "^2.3"
+  },
+  "license": "MIT"
+}
