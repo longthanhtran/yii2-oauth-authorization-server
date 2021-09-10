@@ -3,7 +3,7 @@
 ## Installation
 
 ```shell
-compose require longthanhtran/yii2-auth2-authorization-server
+composer require longthanhtran/yii2-oauth2-server
 ```
 
 ## Notes
