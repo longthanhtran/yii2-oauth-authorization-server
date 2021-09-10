@@ -75,11 +75,11 @@ return [
 ];
 ```
 
-Be sure to prepare the private key, public key (in @app/keys folder) and encryption Key.
+Be sure to prepare the `privateKey`, `publicKey` (in @app/keys folder) and encryption Key. With `encryptionKey`, you can refer to [Cryptography](https://www.yiiframework.com/doc/guide/2.0/en/security-cryptography) guideline on Yii2's guide.
 
 * To prepare the schema, run migration with
 ```shell
-yii migrate --migrationPath=@vendor/longthanhtran/yii2-oauth2-authorization-server/oauth2/migrations
+yii migrate --migrationPath=@vendor/longthanhtran/yii2-oauth2-server/oauth2/migrations
 ```
 
 * To validate user's credential, you can implement UserEntityInterface for your User class, sample provide below. Be sure to `use UserQueryTrait` in `User`
