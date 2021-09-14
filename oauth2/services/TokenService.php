@@ -5,7 +5,7 @@ namespace longthanhtran\oauth2\services;
 use longthanhtran\oauth2\core\repositories\FormatScopesForStorage;
 use longthanhtran\oauth2\models\Client;
 use longthanhtran\oauth2\models\Token;
-use League\oauth2\Server\Entities\AccessTokenEntityInterface;
+use League\OAuth2\Server\Entities\AccessTokenEntityInterface;
 
 class TokenService
 {

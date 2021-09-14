@@ -2,11 +2,11 @@
 
 namespace longthanhtran\oauth2\core\models;
 
-use League\oauth2\Server\Entities\AccessTokenEntityInterface;
-use League\oauth2\Server\Entities\ClientEntityInterface;
-use League\oauth2\Server\Entities\Traits\AccessTokenTrait;
-use League\oauth2\Server\Entities\Traits\EntityTrait;
-use League\oauth2\Server\Entities\Traits\TokenEntityTrait;
+use League\OAuth2\Server\Entities\AccessTokenEntityInterface;
+use League\OAuth2\Server\Entities\ClientEntityInterface;
+use League\OAuth2\Server\Entities\Traits\AccessTokenTrait;
+use League\OAuth2\Server\Entities\Traits\EntityTrait;
+use League\OAuth2\Server\Entities\Traits\TokenEntityTrait;
 
 class AccessToken implements AccessTokenEntityInterface
 {
