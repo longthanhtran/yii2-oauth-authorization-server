@@ -3,7 +3,7 @@
 namespace longthanhtran\oauth2\controllers;
 
 use longthanhtran\oauth2\Module;
-use League\oauth2\Server\Exception\OAuthServerException;
+use League\OAuth2\Server\Exception\OAuthServerException;
 use Yii;
 use yii\helpers\Json;
 

@@ -5,7 +5,7 @@ namespace longthanhtran\oauth2\controllers;
 
 use app\models\User;
 use longthanhtran\oauth2\Module;
-use League\oauth2\Server\Exception\OAuthServerException;
+use League\OAuth2\Server\Exception\OAuthServerException;
 use Yii;
 
 class AuthorizeController extends BaseController

@@ -14,9 +14,10 @@ class m210830_041002_create_clients_table extends Migration
     {
         $this->createTable('{{%clients}}', [
             'id' => $this->bigPrimaryKey()->unsigned(),
-            'user_id' => $this->bigInteger()->unsigned()->null()->unique(),
+            'user_id' => $this->bigInteger()->unsigned()->null(),
             'name' => $this->string(),
             'secret' => $this->string(100)->null(),
+            'identifier' => $this->string(255)->unique(),
             'provider' => $this->string()->null(),
             'redirect' => $this->string(),
             'personal_access_client' => $this->boolean(),

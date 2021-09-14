@@ -2,8 +2,8 @@
 
 namespace longthanhtran\oauth2\core\models;
 
-use League\oauth2\Server\Entities\ClientEntityInterface;
-use League\oauth2\Server\Entities\Traits\ClientTrait;
+use League\OAuth2\Server\Entities\ClientEntityInterface;
+use League\OAuth2\Server\Entities\Traits\ClientTrait;
 
 
 class Client implements ClientEntityInterface
