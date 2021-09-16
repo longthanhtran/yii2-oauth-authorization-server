@@ -7,27 +7,10 @@ use longthanhtran\oauth2\services\TokenService;
 use League\OAuth2\Server\Entities\AccessTokenEntityInterface;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface;
-use yii\base\Event;
 
 class AccessTokenRepository implements AccessTokenRepositoryInterface
 {
     use FormatScopesForStorage;
-
-    /**
-     * @var Event
-     */
-    protected Event $events;
-
-    /**
-     * @var TokenService
-     */
-    protected TokenService $tokenService;
-
-    public function __construct(TokenService $tokenService, Event $event)
-    {
-        $this->events = $event;
-        $this->tokenService = $tokenService;
-    }
 
     /**
      * @param ClientEntityInterface $clientEntity
@@ -48,7 +31,8 @@ class AccessTokenRepository implements AccessTokenRepositoryInterface
     public function persistNewAccessToken(
         AccessTokenEntityInterface $accessTokenEntity)
     {
-        $this->tokenService->create($accessTokenEntity);
+        $tokenService = new TokenService();
+        $tokenService->create($accessTokenEntity);
     }
 
     /**
@@ -57,12 +41,14 @@ class AccessTokenRepository implements AccessTokenRepositoryInterface
      */
     public function revokeAccessToken($tokenId)
     {
-        $this->tokenService->revokeAccessToken($tokenId);
+        $tokenService = new TokenService();
+        $tokenService->revokeAccessToken($tokenId);
     }
 
     public function isAccessTokenRevoked($tokenId): bool
     {
-        return $this->tokenService->isAccessTokenRevoked($tokenId);
+        $tokenService = new TokenService();
+        return $tokenService->isAccessTokenRevoked($tokenId);
     }
 
 }

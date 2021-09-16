@@ -33,7 +33,8 @@ class m210830_084542_create_access_tokens_table extends Migration
             'access_tokens',
             'client_id',
             'clients',
-            'id'
+            'id',
+            'CASCADE'
         );
 
         $this->addForeignKey(
@@ -41,7 +42,8 @@ class m210830_084542_create_access_tokens_table extends Migration
             'access_tokens',
             'user_id',
             'users',
-            'id'
+            'id',
+            'CASCADE'
         );
     }
 
