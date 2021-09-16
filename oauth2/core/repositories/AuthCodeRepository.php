@@ -13,9 +13,9 @@ class AuthCodeRepository implements AuthCodeRepositoryInterface
 
     protected AuthCodeService $authCodeService;
 
-    public function __construct(AuthCodeService $authCodeService)
+    public function __construct()
     {
-        $this->authCodeService = $authCodeService;
+        $this->authCodeService = new AuthCodeService();
     }
 
     /**

@@ -12,6 +12,13 @@ class AccessTokenRepository implements AccessTokenRepositoryInterface
 {
     use FormatScopesForStorage;
 
+    protected TokenService $tokenService;
+
+    public function __construct()
+    {
+        $this->tokenService = new TokenService();
+    }
+
     /**
      * @param ClientEntityInterface $clientEntity
      * @param array $scopes
@@ -31,8 +38,7 @@ class AccessTokenRepository implements AccessTokenRepositoryInterface
     public function persistNewAccessToken(
         AccessTokenEntityInterface $accessTokenEntity)
     {
-        $tokenService = new TokenService();
-        $tokenService->create($accessTokenEntity);
+        $this->tokenService->create($accessTokenEntity);
     }
 
     /**
@@ -41,14 +47,12 @@ class AccessTokenRepository implements AccessTokenRepositoryInterface
      */
     public function revokeAccessToken($tokenId)
     {
-        $tokenService = new TokenService();
-        $tokenService->revokeAccessToken($tokenId);
+        $this->tokenService->revokeAccessToken($tokenId);
     }
 
     public function isAccessTokenRevoked($tokenId): bool
     {
-        $tokenService = new TokenService();
-        return $tokenService->isAccessTokenRevoked($tokenId);
+        return $this->tokenService->isAccessTokenRevoked($tokenId);
     }
 
 }

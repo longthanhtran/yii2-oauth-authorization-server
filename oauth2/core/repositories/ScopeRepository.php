@@ -12,9 +12,9 @@ class ScopeRepository implements ScopeRepositoryInterface
 
     protected ScopeService $scopeService;
 
-    public function __construct(ScopeService $scopeService)
+    public function __construct()
     {
-        $this->scopeService = $scopeService;
+        $this->scopeService = new ScopeService();
     }
 
     /**

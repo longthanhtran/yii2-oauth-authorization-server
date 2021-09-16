@@ -15,9 +15,9 @@ class ClientRepository implements ClientRepositoryInterface
      */
     protected ClientService $clientService;
 
-    public function __construct(ClientService $clientService)
+    public function __construct()
     {
-        $this->clientService = $clientService;
+        $this->clientService = new ClientService();
     }
 
     /**
