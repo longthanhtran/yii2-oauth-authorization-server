@@ -12,9 +12,9 @@ class RefreshTokenRepository implements RefreshTokenRepositoryInterface
 
     protected RefreshTokenService $refreshTokenService;
 
-    public function __construct(RefreshTokenService $refreshTokenService)
+    public function __construct()
     {
-        $this->refreshTokenService = $refreshTokenService;
+        $this->refreshTokenService = new RefreshTokenService();
     }
 
     /**
@@ -22,7 +22,7 @@ class RefreshTokenRepository implements RefreshTokenRepositoryInterface
      */
     public function getNewRefreshToken(): RefreshToken
     {
-        return new RefreshToken;
+        return new RefreshToken();
     }
 
     /**
