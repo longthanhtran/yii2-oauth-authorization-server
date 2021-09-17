@@ -54,14 +54,14 @@ class Module extends \yii\base\Module implements BootstrapInterface {
         ]
     ];
 
-    public $privateKey;
-    public $publicKey;
+    public  $privateKey;
+    public  $publicKey;
     private $encryptionKey;
     private $_serverResponse;
     private $_serverRequest;
-    public $enableGrantTypes;
+    public  $enableGrantTypes;
     private $_authorizationServer;
-    public $urlManagerRules = [];
+    public  $urlManagerRules = [];
 
     public $controllerNamespace = 'longthanhtran\oauth2\controllers';
 
