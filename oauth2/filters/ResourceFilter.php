@@ -1,6 +1,6 @@
 <?php
 
-namespace app\filters;
+namespace longthanhtran\oauth2\filters;
 
 use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\ResourceServer;
